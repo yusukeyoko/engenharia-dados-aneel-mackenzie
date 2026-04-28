@@ -216,3 +216,17 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Segredos e credenciais
+.env
+*.env
+secrets.json
+config.local.*
+
+# Notebooks com outputs de teste
+.ipynb_checkpoints/
+
+# Dados grandes (Bronze pode pesar)
+data/
+*.csv
+*.zip
