@@ -83,7 +83,7 @@ Como prever, a partir das características de um empreendimento de geração de 
 |---|---|---|
 |Bruno de Souza Ribeiro|10731796 | https://github.com/yusukeyoko |
 | Wender Carlos| | |
-| Tauã Matheus| | |
+| Tauã Matheus| 10732344 | https://github.com/tauamat |
 | Leonardo Cuenca| | |
 
 ## 📅 Cronograma
