@@ -96,6 +96,41 @@ Como prever, a partir das características de um empreendimento de geração de 
 | 26/05 | Etapa 3 — Modelos de ML |
 | 02/06 | Apresentação Final |
 
+Data_Dictionary
+
+Coluna	Tipo	Descrição
+DatGeracaoConjuntoDados	datetime	Data de geração do dataset
+NomEmpreendimento	string	Nome da usina/empreendimento
+IdeNucleoCEG	int	Identificador do núcleo CEG
+CodCEG	string	Código único do empreendimento (ANEEL)
+SigUFPrincipal	string	Unidade federativa (UF)
+SigTipoGeracao	string	Tipo de geração (ex: UHE, PCH, CGH)
+DscFaseUsina	string	Fase do empreendimento (Operação, Construção, etc.)
+DscOrigemCombustivel	string	Origem do combustível (Hídrica, Térmica, etc.)
+DscFonteCombustivel	string	Fonte específica do combustível
+DscTipoOutorga	string	Tipo de outorga (Autorização, Concessão, Registro)
+NomFonteCombustivel	string	Nome detalhado da fonte de energia
+DatEntradaOperacao	datetime	Data de entrada em operação
+MdaPotenciaOutorgadaKw	float	Potência outorgada (kW)
+MdaPotenciaFiscalizadaKw	float	Potência fiscalizada (kW)
+MdaGarantiaFisicaKw	float	Garantia física (kW)
+IdcGeracaoQualificada	boolean	Indica geração qualificada (Sim/Não)
+NumCoordNEmpreendimento	float	Latitude do empreendimento
+NumCoordEEmpreendimento	float	Longitude do empreendimento
+DatInicioVigencia	datetime	Início da vigência da outorga
+DatFimVigencia	datetime	Fim da vigência da outorga
+DscPropriRegimePariticipacao	string	Regime de participação
+DscSubBacia	string	Sub-bacia hidrográfica
+DscMuninicpios	string	Municípios do empreendimento
+
+Critérios de Seleção
+
+Com a ascensão da Inteligência Artificial (IA), a demanda por infraestrutura tecnológica tornou-se uma prioridade global. Diante desse cenário, selecionamos um conjunto de dados focado na relação entre o
+consumo de energia e a operação de Datacenters. O objetivo é analisar o posicionamento estratégico do Brasil na expansão desses centros em território nacional, abordando o pilar fundamental para o avanço
+dessa tecnologia: a matriz energética e melhor localização necessária para sustentar tamanha carga computacional.
+
+
+
 ## 📜 Licença
 
 Este projeto é acadêmico. Os dados utilizados estão sob licença **ODbL** da ANEEL.
