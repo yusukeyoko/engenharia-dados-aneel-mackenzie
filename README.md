@@ -82,9 +82,9 @@ Como prever, a partir das características de um empreendimento de geração de 
 | Nome | RA | GitHub |
 |---|---|---|
 |Bruno de Souza Ribeiro|10731796 | https://github.com/yusukeyoko |
-| Wender Carlos| | |
+| Wender Carlos| 10732285 |https://github.com/WenderCarlosPS |
 | Tauã Matheus| 10732344 | https://github.com/tauamat |
-| Leonardo Cuenca| | |
+| Leonardo Cuenca|10732437 | https://github.com/leonardocuenca98 |
 
 ## 📅 Cronograma
 
