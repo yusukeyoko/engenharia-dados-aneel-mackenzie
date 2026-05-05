@@ -16,7 +16,9 @@ Este projeto utiliza dados governamentais reais da **ANEEL (Agência Nacional de
 
 ## 🎯 Problema a ser resolvido
 
-Como prever, a partir das características de um empreendimento de geração de energia, em qual fase ele se encontra (Operação, Construção, Construção não iniciada) e qual sua potência fiscalizada esperada — fornecendo subsídio para decisões de localização de datacenters?
+O problema consiste em prever, a partir das características de empreendimentos de geração de energia e de fatores relevantes para datacenters — como **geolocalização**, **condições meteorológicas** e **cobertura de fibra óptica** — em qual fase os projetos de energia se encontram (**operação, construção ou não iniciada**) e qual será sua potência fiscalizada esperada.
+
+O objetivo é utilizar essas informações para identificar regiões com maior disponibilidade futura de energia no Brasil, apoiando decisões estratégicas sobre a localização de datacenters e a avaliação da viabilidade de cada região.
 
 ## 📊 Fonte de dados
 
