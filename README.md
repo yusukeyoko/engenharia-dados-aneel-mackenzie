@@ -1,136 +1,147 @@
-# engenharia-dados-aneel-mackenzie
-Projeto para a conclusão do curso de engenharia de dados Mackenzie- Aneel  
+Aqui está o seu texto padronizado e organizado seguindo as melhores práticas de documentação para repositórios (README). Utilizei ícones consistentes, tabelas alinhadas e uma hierarquia visual clara.
+
+---
+
 # 🔌 Análise da Matriz Energética Brasileira para Suporte à Expansão de Datacenters
 
-> Projeto da disciplina **Fundamentos de Dados e Analytics — Engenharia de Dados em Big Data**  
-> Universidade Presbiteriana Mackenzie  
-> Profs. Fabio Rossi Versolatto e Gustavo Moreira Calixto
+> **Projeto de Conclusão de Curso**  
+> **Disciplina:** Fundamentos de Dados e Analytics — Engenharia de Dados em Big Data  
+> **Instituição:** Universidade Presbiteriana Mackenzie  
+> **Professores:** Fabio Rossi Versolatto e Gustavo Moreira Calixto
 
 ---
 
 ## 📌 Contextualização
 
-A explosão da Inteligência Artificial está provocando uma corrida global por **datacenters**, que são infraestruturas extremamente intensivas em energia elétrica. O Brasil disputa esse mercado, mas a decisão de **onde** instalar esses datacenters depende de três fatores principais: **capacidade de energia disponível**, **percentual de fontes renováveis** (compromissos ESG) e **estabilidade do fornecimento**.
+A explosão da Inteligência Artificial está provocando uma corrida global por **datacenters**, que são infraestruturas extremamente intensivas em energia elétrica. O Brasil disputa esse mercado, mas a decisão estratégica de localização depende de três fatores principais:
 
-Este projeto utiliza dados governamentais reais da **ANEEL (Agência Nacional de Energia Elétrica)** para construir um pipeline completo de engenharia de dados que apoia decisões de localização de datacenters no Brasil.
+*   **Capacidade:** Energia disponível para grandes cargas.
+*   **Sustentabilidade:** Percentual de fontes renováveis (Compromissos ESG).
+*   **Estabilidade:** Confiabilidade do fornecimento regional.
 
-## 🎯 Problema a ser resolvido
+Este projeto utiliza dados reais da **ANEEL (Agência Nacional de Energia Elétrica)** para construir um pipeline completo de engenharia de dados visando apoiar decisões de expansão tecnológica no país.
 
-Como prever, a partir das características de um empreendimento de geração de energia, em qual fase ele se encontra (Operação, Construção, Construção não iniciada) e qual sua potência fiscalizada esperada — fornecendo subsídio para decisões de localização de datacenters?
+---
 
-## 📊 Fonte de dados
+## 🎯 Problema a ser Resolvido
 
-- **Dataset:** SIGA – Sistema de Informações de Geração da ANEEL
-- **URL:** https://dadosabertos.aneel.gov.br/dataset/siga-sistema-de-informacoes-de-geracao-da-aneel
-- **Atualização:** mensal
-- **Licença:** Open Data Commons Open Database License (ODbL) — dados abertos governamentais brasileiros, gratuitos
-- **Volume:** ~7,5 MiB, com 23 colunas e dezenas de milhares de empreendimentos
+Como prever, a partir das características de um empreendimento de geração de energia, em qual fase ele se encontra (**Operação, Construção, Construção não iniciada**) e qual sua **potência fiscalizada esperada**, fornecendo subsídios técnicos para a escolha de locais ideais para novos datacenters?
 
-## 🛠️ Tecnologias utilizadas
+---
+
+## 📊 Fonte de Dados
+
+*   **Dataset:** SIGA – Sistema de Informações de Geração da ANEEL.
+*   **URL:** [Dados Abertos ANEEL](https://dadosabertos.aneel.gov.br/dataset/siga-sistema-de-informacoes-de-geracao-da-aneel)
+*   **Atualização:** Mensal.
+*   **Licença:** Open Data Commons Open Database License (ODbL).
+*   **Volume:** ~7,5 MiB | 23 colunas | Dezenas de milhares de registros.
+
+---
+
+## 🛠️ Tecnologias Utilizadas
 
 | Camada | Tecnologia |
-|---|---|
-| Notebook / Execução | Google Colab |
-| Linguagem | Python 3.11 |
-| Ingestão | `requests`, `pandas` |
-| Persistência | **MongoDB Atlas** (Free Tier) |
-| Arquitetura de dados | **Medallion** (Bronze → Silver → Gold) |
-| EDA / Visualização | `matplotlib`, `seaborn`, `plotly` |
-| Machine Learning | `scikit-learn`, `xgboost` |
-| Versionamento | Git / GitHub |
+| :--- | :--- |
+| **Notebook / Execução** | Google Colab |
+| **Linguagem** | Python 3.11 |
+| **Ingestão** | `requests`, `pandas` |
+| **Persistência** | MongoDB Atlas (Free Tier) |
+| **Arquitetura** | Medallion (Bronze → Silver → Gold) |
+| **EDA / Visualização** | `matplotlib`, `seaborn`, `plotly` |
+| **Machine Learning** | `scikit-learn`, `xgboost` |
+| **Versionamento** | Git / GitHub |
 
-## 🗺️ Roadmap por etapa
+---
 
-### Etapa 1 — Processamento e Ingestão (entrega 05/05)
-- Download programático do CSV oficial da ANEEL
-- Persistência **fiel à origem** na coleção `bronze_siga` do MongoDB
-- Metadados de auditoria (timestamp, fonte, URL)
-- Indexação básica para acesso
+## 🗺️ Roadmap por Etapas
 
-### Etapa 2 — Análise Exploratória e Limpeza (entrega 14/05)
-- Bronze → **Silver**: tipagem (numérico/data/coordenadas), padronização textual, deduplicação por `CodCEG`, validação de regras de negócio
-- EDA: distribuição por tipo de geração, ranking de UFs por capacidade, evolução temporal por fonte, mapa interativo
-- Silver → **Gold**: data mart por UF com **Índice de Atratividade para Datacenters** (capacidade × % renovável × pipeline)
+### 🔹 Etapa 1: Processamento e Ingestão (Entrega 05/05)
+*   Download programático do CSV oficial da ANEEL.
+*   Persistência **fiel à origem** na coleção `bronze_siga` do MongoDB.
+*   Inclusão de metadados de auditoria (timestamp, fonte, URL).
+*   Indexação básica para otimização de acesso.
 
-### Etapa 3 — Aplicação de ML (entrega 26/05)
-- **Classificação** (Random Forest vs XGBoost): prever a fase do empreendimento
-- **Regressão** (Random Forest Regressor): prever a potência fiscalizada
-- Persistência das predições na camada Gold para consumo por dashboards
+### 🔹 Etapa 2: Análise Exploratória e Limpeza (Entrega 14/05)
+*   **Bronze → Silver:** Tipagem de dados, padronização textual, deduplicação por `CodCEG` e validação de regras de negócio.
+*   **EDA:** Análise de distribuição por tipo de geração, ranking de UFs e mapas interativos.
+*   **Silver → Gold:** Criação de data mart por UF com o **Índice de Atratividade para Datacenters**.
 
-## 📁 Estrutura do repositório
+### 🔹 Etapa 3: Aplicação de ML (Entrega 26/05)
+*   **Classificação:** Uso de Random Forest vs XGBoost para prever a fase do empreendimento.
+*   **Regressão:** Predição da potência fiscalizada esperada.
+*   **Consumo:** Persistência das predições na camada Gold para dashboards.
 
-```
+---
+
+## 📁 Estrutura do Repositório
+
+```text
 .
 ├── README.md
-├── Projeto_ANEEL_Datacenters.ipynb   # Notebook principal (Colab)
+├── Projeto_ANEEL_Datacenters.ipynb    # Notebook principal (Colab)
 ├── data/                              # Dados intermediários (gitignored)
 └── docs/                              # Slides da apresentação final
 ```
 
-## 🚀 Como executar
+---
 
-1. Crie uma conta gratuita em [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/register) (cluster M0 — 512 MB grátis)
-2. Em **Database Access**, crie um usuário/senha
-3. Em **Network Access**, libere `0.0.0.0/0` (apenas para uso acadêmico)
-4. Copie a connection string (`mongodb+srv://...`)
-5. Abra o notebook no Google Colab
-6. Em **Configurações → Secrets**, adicione `MONGO_URI` com a connection string
-7. Execute todas as células
+## 🚀 Como Executar
+
+1.  Crie uma conta gratuita no [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/register).
+2.  Configure o **Database Access** (usuário/senha) e o **Network Access** (IP `0.0.0.0/0`).
+3.  Obtenha sua *Connection String* (`mongodb+srv://...`).
+4.  Abra o notebook no **Google Colab**.
+5.  Em **Configurações → Secrets**, adicione a chave `MONGO_URI` com o valor da sua string de conexão.
+6.  Execute as células em sequência.
+
+---
 
 ## 👥 Integrantes
 
 | Nome | RA | GitHub |
-|---|---|---|
-|Bruno de Souza Ribeiro|10731796 | https://github.com/yusukeyoko |
-| Wender Carlos| 10732285 |https://github.com/WenderCarlosPS |
-| Tauã Matheus| 10732344 | https://github.com/tauamat |
-| Leonardo Cuenca|10732437 | https://github.com/leonardocuenca98 |
+| :--- | :--- | :--- |
+| **Bruno de Souza Ribeiro** | 10731796 | [@yusukeyoko](https://github.com/yusukeyoko) |
+| **Wender Carlos** | 10732285 | [@WenderCarlosPS](https://github.com/WenderCarlosPS) |
+| **Tauã Matheus** | 10732344 | [@tauamat](https://github.com/tauamat) |
+| **Leonardo Cuenca** | 10732437 | [@leonardocuenca98](https://github.com/leonardocuenca98) |
 
-## 📅 Cronograma
+---
 
-| Data | Entrega |
-|---|---|
-| 23/04 | Planejamento completo (este README) |
-| 05/05 | Etapa 1 — Ingestão + Bronze |
-| 14/05 | Etapa 2 — Silver, Gold + EDA |
-| 26/05 | Etapa 3 — Modelos de ML |
-| 02/06 | Apresentação Final |
+## 📅 Cronograma de Entregas
 
-Data_Dictionary
+| Data | Marco |
+| :--- | :--- |
+| **23/04** | Planejamento completo e estruturação do README |
+| **05/05** | Etapa 1 — Ingestão + Camada Bronze |
+| **14/05** | Etapa 2 — Camadas Silver/Gold + EDA |
+| **26/05** | Etapa 3 — Modelos de Machine Learning |
+| **02/06** | Apresentação Final do Projeto |
 
-Coluna	Tipo	Descrição
-DatGeracaoConjuntoDados	datetime	Data de geração do dataset
-NomEmpreendimento	string	Nome da usina/empreendimento
-IdeNucleoCEG	int	Identificador do núcleo CEG
-CodCEG	string	Código único do empreendimento (ANEEL)
-SigUFPrincipal	string	Unidade federativa (UF)
-SigTipoGeracao	string	Tipo de geração (ex: UHE, PCH, CGH)
-DscFaseUsina	string	Fase do empreendimento (Operação, Construção, etc.)
-DscOrigemCombustivel	string	Origem do combustível (Hídrica, Térmica, etc.)
-DscFonteCombustivel	string	Fonte específica do combustível
-DscTipoOutorga	string	Tipo de outorga (Autorização, Concessão, Registro)
-NomFonteCombustivel	string	Nome detalhado da fonte de energia
-DatEntradaOperacao	datetime	Data de entrada em operação
-MdaPotenciaOutorgadaKw	float	Potência outorgada (kW)
-MdaPotenciaFiscalizadaKw	float	Potência fiscalizada (kW)
-MdaGarantiaFisicaKw	float	Garantia física (kW)
-IdcGeracaoQualificada	boolean	Indica geração qualificada (Sim/Não)
-NumCoordNEmpreendimento	float	Latitude do empreendimento
-NumCoordEEmpreendimento	float	Longitude do empreendimento
-DatInicioVigencia	datetime	Início da vigência da outorga
-DatFimVigencia	datetime	Fim da vigência da outorga
-DscPropriRegimePariticipacao	string	Regime de participação
-DscSubBacia	string	Sub-bacia hidrográfica
-DscMuninicpios	string	Municípios do empreendimento
+---
 
-Critérios de Seleção
+## 📖 Dicionário de Dados (Principais Atributos)
 
-Com a ascensão da Inteligência Artificial (IA), a demanda por infraestrutura tecnológica tornou-se uma prioridade global. Diante desse cenário, selecionamos um conjunto de dados focado na relação entre o
-consumo de energia e a operação de Datacenters. O objetivo é analisar o posicionamento estratégico do Brasil na expansão desses centros em território nacional, abordando o pilar fundamental para o avanço
-dessa tecnologia: a matriz energética e melhor localização necessária para sustentar tamanha carga computacional.
+| Coluna | Tipo | Descrição |
+| :--- | :--- | :--- |
+| `NomEmpreendimento` | string | Nome da usina/empreendimento |
+| `CodCEG` | string | Código único do empreendimento (ANEEL) |
+| `SigUFPrincipal` | string | Unidade federativa (UF) |
+| `SigTipoGeracao` | string | Tipo de geração (ex: UHE, PCH, CGH) |
+| `DscFaseUsina` | string | Fase atual (Operação, Construção, etc.) |
+| `MdaPotenciaOutorgadaKw`| float | Potência outorgada em kW |
+| `MdaPotenciaFiscalizadaKw`| float | Potência fiscalizada em kW |
+| `NumCoordNEmpreendimento`| float | Latitude para georreferenciamento |
+| `NumCoordEEmpreendimento`| float | Longitude para georreferenciamento |
 
+---
 
+## ⚖️ Critérios de Seleção
+
+Com a ascensão da Inteligência Artificial (IA), a demanda por infraestrutura tecnológica tornou-se uma prioridade global. Diante desse cenário, selecionamos um conjunto de dados focado na relação entre o consumo de energia e a operação de **Datacenters**. O objetivo é analisar o posicionamento estratégico do Brasil na expansão desses centros em território nacional, abordando o pilar fundamental para o avanço dessa tecnologia: a matriz energética e a melhor localização necessária para sustentar tamanha carga computacional.
+
+---
 
 ## 📜 Licença
 
-Este projeto é acadêmico. Os dados utilizados estão sob licença **ODbL** da ANEEL.
+Este projeto possui finalidade estritamente acadêmica. Os dados utilizados são de domínio público, regidos pela licença **ODbL** da ANEEL.
