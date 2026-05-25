@@ -711,7 +711,7 @@ db['model_registry'].insert_one({
 <div align="center">
 
 **Disciplina:** Fundamentos de Dados e Analytics — Engenharia de Dados em Big Data  
-**Professor:** Fabio Rossi Versolatto  
+**Professores:** Fabio Rossi Versolatto e Gustavo Moreira Calixto 
 `Python 3.10` · `MongoDB Atlas` · `Google Colab GPU T4` · `scikit-learn` · `XGBoost`
 
 </div>
