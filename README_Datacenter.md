@@ -2,7 +2,7 @@
 ### Engenharia de Dados em Big Data — 4 Bases × Machine Learning
 
 > **Disciplina:** Fundamentos de Dados e Analytics — Engenharia de Dados em Big Data  
-> **Professor:** Fabio Rossi Versolatto  
+> **Professores:** Fabio Rossi Versolatto e Gustavo Moreira Calixto 
 > **Ambiente:** Google Colab (GPU T4) · MongoDB Atlas · Python 3.10
 
 ---
