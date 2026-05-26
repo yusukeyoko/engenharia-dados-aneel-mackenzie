@@ -1,6 +1,3 @@
-Aqui está o seu texto padronizado e organizado seguindo as melhores práticas de documentação para repositórios (README). Utilizei ícones consistentes, tabelas alinhadas e uma hierarquia visual clara.
-
----
 
 # 🔌 Análise da Matriz Energética Brasileira para Suporte à Expansão de Datacenters
 
